@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> uts</title>
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap-icons.min.css">   
-    <script type="text/javascript" src="bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/icons/font/bootstrap-icons.min.css">   
+    <script type="text/javascript" src="assets/js/bootstrap.bundle.js"></script>
     <style>
 /* Sembunyikan semua section secara default */
 .hidden-section {
@@ -165,20 +165,151 @@
     transform: translateY(-5px);
 }
 
+/* General Section Styles */
+.about {
+  height: 100vh;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.main-heading {
+  font-size: 8rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.05);
+  margin: 0;
+}
+
+.sub-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #4e0a0a;
+  margin-top: 20px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #f0f0f0;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.image {
+  width: 80%;
+  max-width: 1200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.overlay-year {
+  font-size: clamp(3rem, 10vw, 5rem);
+  font-weight: bold;
+}
+
+/* Langkah-langkah */
+.step-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  margin-bottom: 30px; /* Memberikan jarak antar langkah */
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  font-size: 3rem;
+  color: #e0e0e0;
+  font-weight: bold;
+}
+
+.step-title {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 20px 0;
+}
+
+.step-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Responsif untuk Mobile dan Tablet */
 @media (max-width: 768px) {
-    .about img {
-      width: 100%; /* Make image fill the width of the screen on mobile */
-      max-height: 300px; /* Restrict image height for smaller screens */
-    }
-
-    .about h1 {
-      font-size: 3rem; /* Adjust font size of heading for smaller screens */
-    }
-
-    .about h2 {
-      font-size: 1.5rem; /* Adjust font size of subheading for smaller screens */
-    }
+  .step-card {
+    padding: 20px; /* Menyesuaikan padding pada layar kecil */
   }
+
+  .step-number {
+    font-size: 2rem; /* Mengurangi ukuran angka langkah pada layar kecil */
+  }
+
+  .step-title {
+    font-size: 1.2rem;
+  }
+
+  .step-description {
+    font-size: 0.9rem;
+  }
+
+  /* Menampilkan langkah dalam dua kolom pada layar kecil */
+  .col-md-6 {
+    flex: 1 1 100%; /* Membuat kolom menjadi satu baris */
+  }
+
+  .col-lg-3 {
+    flex: 1 1 100%; /* Membuat kolom menjadi satu baris */
+  }
+}
+
+/* Responsif untuk desktop */
+@media (min-width: 1200px) {
+  .step-card {
+    padding: 40px;
+  }
+
+  .step-number {
+    font-size: 3.5rem; /* Ukuran lebih besar untuk desktop */
+  }
+
+  .step-title {
+    font-size: 1.5rem;
+  }
+}
+
+
+/*product detail style*/
+  
   @media (max-width: 768px) {
     .product-detail-wrapper {
       flex-direction: column;
@@ -329,82 +460,68 @@
       </div>
     </div>
   </section>
-
-
-
 <!-- About Us Section -->
 <section id="about" class="hidden-section py-5 bg-light">
-  <div class="about" style="height: 100vh; background-color: #f0f0f0; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+  <div class="about">
     <!-- Big Transparent Text -->
-    <h1 style="font-size: 8rem; font-weight: bold; color: rgba(0, 0, 0, 0.05); margin: 0; position: relative; text-align: center;">
-      Know Us More
-    </h1>
+    <h1 class="main-heading">Know Us More</h1>
     <!-- Small Text -->
-    <h2 style="font-size: 2.5rem; font-weight: bold; color: #4e0a0a; position: relative; z-index: 2; text-align: center; margin-top: 20px;">
-      About Us
-    </h2>
+    <h2 class="sub-heading">About Us</h2>
   </div>
 
   <!-- Ring Image -->
-  <div style="display: flex; justify-content: center; align-items: center; position: relative; background-color: #f0f0f0; font-family: Arial, sans-serif;">
-    <div style="position: relative; display: inline-block; text-align: center;">
-      <!-- Adjust image width with object-fit for better scaling -->
-      <img src="diamon.jpg" alt="Diamond Image" 
-           style="width: 90%; max-width: 1500px; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); object-fit: cover;">
-
-      <!-- Text on top of the image -->
-      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: clamp(1.5rem, 5vw, 2rem); font-weight: bold; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);">
+  <div class="image-container">
+    <div class="image-wrapper">
+      <img src="diamon.jpg" alt="Diamond Image" class="image">
+      <div class="image-overlay">
         Memberikan Kemewahan sejak
-        <h1 style="font-size: clamp(3rem, 10vw, 5rem); font-weight: bold;">2005</h1>
+        <h1 class="overlay-year">2005</h1>
       </div>
     </div>
   </div>
-
-  <div style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f0f0f0; padding-top: 20px;">
-    <div style="display: flex; justify-content: space-between; align-items: stretch; height: 60vh; padding: 0 50px;">
-      <!-- Langkah 1 -->
-      <div style="flex: 1; position: relative; text-align: center; background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; margin: 0 10px;">
-        <div style="font-size: 4rem; color: #e0e0e0; font-weight: bold;">01</div>
-        <div style="font-size: 1.5rem; color: #333; margin: 10px 0;">Pemilihan Berlian</div>
-        <p style="font-size: 1rem; color: #666; line-height: 1.5;">
-          Setiap berlian yang kami pilih melalui proses pemilihan yang ketat, memastikan hanya kualitas terbaik yang mencapai tangan Anda.
-        </p>
-      </div>
-  
-      <!-- Langkah 2 -->
-      <div style="flex: 1; position: relative; text-align: center; background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; margin: 0 10px;">
-        <div style="font-size: 4rem; color: #e0e0e0; font-weight: bold;">02</div>
-        <div style="font-size: 1.5rem; color: #333; margin: 10px 0;">Desain yang Unik</div>
-        <p style="font-size: 1rem; color: #666; line-height: 1.5;">
-          Kami percaya bahwa desain perhiasan adalah bentuk seni yang abadi, menciptakan keindahan yang unik untuk setiap pelanggan kami.
-        </p>
-      </div>
-  
-      <!-- Langkah 3 -->
-      <div style="flex: 1; position: relative; text-align: center; background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; margin: 0 10px;">
-        <div style="font-size: 4rem; color: #e0e0e0; font-weight: bold;">03</div>
-        <div style="font-size: 1.5rem; color: #333; margin: 10px 0;">Proses Pembuatan</div>
-        <p style="font-size: 1rem; color: #666; line-height: 1.5;">
-          Perhiasan kami dibuat oleh pengrajin ahli, menggabungkan teknologi modern dengan keterampilan tradisional untuk menciptakan karya yang sempurna.
-        </p>
-      </div>
-  
-      <!-- Langkah 4 -->
-      <div style="flex: 1; position: relative; text-align: center; background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; margin: 0 10px;">
-        <div style="font-size: 4rem; color: #e0e0e0; font-weight: bold;">04</div>
-        <div style="font-size: 1.5rem; color: #333; margin: 10px 0;">Sentuhan Akhir</div>
-        <p style="font-size: 1rem; color: #666; line-height: 1.5;">
-          Setiap perhiasan diberi sentuhan akhir yang sempurna, memastikan bahwa berlian berkilau di setiap sudutnya, memberikan kilauan yang tak tertandingi.
-        </p>
-      </div>
+<!-- Langkah-langkah -->
+<div class="container py-5">
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-12 step-card">
+      <div class="step-number">01</div>
+      <div class="step-title">Pemilihan Berlian</div>
+      <p class="step-description">
+        Setiap berlian yang kami pilih melalui proses pemilihan yang ketat, memastikan hanya kualitas terbaik yang mencapai tangan Anda.
+      </p>
     </div>
-  </div>      
 
-  <!-- Deskripsi About Us -->
-  <div class="container" style="padding: 2rem 1rem; text-align: center; background-color: #f0f0f0;">
-    <p style="font-size: 1rem; color: #666;">We are a company dedicated to providing the best products and services to our customers.</p>
+    <div class="col-lg-3 col-md-6 col-12 step-card">
+      <div class="step-number">02</div>
+      <div class="step-title">Desain yang Unik</div>
+      <p class="step-description">
+        Kami percaya bahwa desain perhiasan adalah bentuk seni yang abadi, menciptakan keindahan yang unik untuk setiap pelanggan kami.
+      </p>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-12 step-card">
+      <div class="step-number">03</div>
+      <div class="step-title">Proses Pembuatan</div>
+      <p class="step-description">
+        Perhiasan kami dibuat oleh pengrajin ahli, menggabungkan teknologi modern dengan keterampilan tradisional untuk menciptakan karya yang sempurna.
+      </p>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-12 step-card">
+      <div class="step-number">04</div>
+      <div class="step-title">Sentuhan Akhir</div>
+      <p class="step-description">
+        Setiap perhiasan diberi sentuhan akhir yang sempurna, memastikan bahwa berlian berkilau di setiap sudutnya, memberikan kilauan yang tak tertandingi.
+      </p>
+    </div>
+  </div>
+</div>
+
+  <!-- About Us Description -->
+  <div class="container text-center py-5">
+    <p class="about-description">We are a company dedicated to providing the best products and services to our customers.</p>
   </div>
 </section>
+
 
     <!-- Products Section -->
 <section id="products" class="hidden-section py-5" style="background-color: #f0f0f0; padding: 5rem 1rem;">
